@@ -1,0 +1,50 @@
+    1  cd
+    2  lsblk
+    3  fdisk dev/sdc
+    4  fdisk dev/sda
+    5  fdisk dev/sdb
+    6  fdisk /dev/sdb
+    7  fdisk /dev/sdc
+    8  lsblk
+    9  fdisk /dev/sdd
+   10  lsblk
+   11  fdisk /dev/sde
+   12  lsblk
+   13  pvcreate /dev/sdc1 /dev/sdd1 /dev/sde1
+   14  vgcreate datos /dev/sdc1 /dev/sdd1 /dev/sde1
+   15  pvs
+   16  vgs
+   17  lvcreate -n www -L +1G datos
+   18  lvcreate -n salvas -L +4G datos
+   19  lvs
+   20  mkfs.ext4 /dev/datos/www
+   21  mkfs.ext4 /dev/datos/salvas
+   22  mkdir /mnt/www
+   23  mkdir /mnt/salvas
+   24  mount /dev/datos/www /mnt/www
+   25  mount /dev/datos/salvas /mnt/salvas
+   26  lvextend -L 2G /dev/datos/www
+   27  lvs
+   28  lsblk
+   29  lvs
+   30  lbslk
+   31  lsblk
+   32  lvs
+   33  pvs
+   34  vgs
+   35  lsblk
+   36  sudo pvcreate /dev/sde1 
+   37  fdisk /dev/sde
+   38  lslbk
+   39  lsblk
+   40  fdisk /dev/sde
+   41  pvcreate /dev/sde1
+   42  vgextend datos /dev/sde1
+   43  vgdisplay datos
+   44  lvextend -L 2G /dev/datos/www
+   45  vgdisplay datos
+   46  lsblk
+   47  vgdisplay datos
+   48  lsblk
+   49  history
+   50  history > history.txt
